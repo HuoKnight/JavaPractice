@@ -1,10 +1,13 @@
+import java.util.Random;
+
 public class Roll {
-    public static void main(String[] args) {
-        String[] argSplit = args[0].split("d", 2);
-        String arg1 = argSplit[0];
-        String arg2 = argSplit[1];
-        System.out.println("Roll " + arg1 + " d" + arg2 + "s.");
+    public Roll() {
+        Die die = new Die(Main.amount, Main.sides);
+        Random rand = new Random();
+
+        int result = rand.nextInt(die.getNumSides());
+        result += 1;
+
+        System.out.println(result);
     }
 }
-
-
